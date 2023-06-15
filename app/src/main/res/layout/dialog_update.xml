@@ -1,26 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="8dp"
     android:padding="10dp"
     >
-
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_text"
-        android:hint="Enter text"
+        android:layout_margin="10dp"
+        android:hint="Task to be scheduled (UPDATED)"
         android:padding="12dp"
-        android:lines="4"
-        android:gravity="center"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/red"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_view1"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
         android:id="@+id/bt_update"
-        android:text="Update"
-        android:layout_marginTop="8dp"/>
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0"
+        android:background="@color/white"
+        android:src="@mipmap/ic_edit" />
 
 
 </LinearLayout>

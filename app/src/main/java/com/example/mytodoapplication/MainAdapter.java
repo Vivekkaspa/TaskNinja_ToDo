@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -89,12 +90,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
                 //init and assign varable
 
-                EditText editText=dialog.findViewById(R.id.edit_text);
-                Button btUpdate=dialog.findViewById(R.id.bt_update);
+                TextView textview1=dialog.findViewById(R.id.text_view1);
+                ImageButton btUpdate=dialog.findViewById(R.id.bt_update);
 
                 //set text on edit text
 
-                editText.setText(sText);
+                textview1.setText(sText);
 
                 btUpdate.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -104,7 +105,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                         dialog.dismiss();
                         //get upate text from edit text
 
-                        String uText=editText.getText().toString().trim();
+                        String uText=textview1.getText().toString().trim();
                         //update text in db
 
                         database.mainDao().upate(sID,uText);

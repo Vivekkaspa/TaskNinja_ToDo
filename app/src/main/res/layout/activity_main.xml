@@ -8,39 +8,73 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_text"
-        android:hint="Type your task"
-        android:padding="12dp"/>
+        android:layout_margin="10dp"
+        android:hint="Task to be scheduled"
+        android:padding="12dp"
+        app:boxStrokeColor="@color/red"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/bt_add"
+        android:layout_marginTop="8dp"
+        >
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="197dp"
+            android:layout_height="175dp"
             android:layout_marginRight="5dp"
-            android:text="Add"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/white"
+            android:src="@mipmap/ninja_disappear" />
+
+        <ImageButton
+            android:id="@+id/bt_add"
+            android:layout_width="141dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:src="@mipmap/add"
+            />
+
+
+        <ImageButton
             android:id="@+id/bt_reset"
-            android:text="Clear"/>
-
-
+            android:layout_width="141dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="45dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:src="@mipmap/reset1" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+
+        <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recycler_view"
         android:layout_marginTop="8dp"
-        tools:listitem="@layout/list_row_main"/>
+        tools:listitem="@layout/list_row_main"
+        />
+
+
 
 </LinearLayout>

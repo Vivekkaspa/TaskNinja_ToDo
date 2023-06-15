@@ -1,6 +1,8 @@
 package com.example.mytodoapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import com.bumptech.glide.Glide;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,15 +12,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+import com.example.mytodoapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    EditText editText;
-    Button btAdd,btReset;
+    TextView textView;
+    ImageButton btAdd,btReset;
     RecyclerView recyclerView;
+    //ImageView imageView;
 
     List<MainData> dataList=new ArrayList<>();
     LinearLayoutManager linearLayoutManager;
@@ -34,10 +41,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText=findViewById(R.id.edit_text);
+        textView=findViewById(R.id.text_view);
         btAdd=findViewById(R.id.bt_add);
         btReset=findViewById(R.id.bt_reset);
         recyclerView=findViewById(R.id.recycler_view);
+
+      //  imageView=findViewById(R.id.imageView);
+        // Adding the gif here using glide library
+        //Glide.with(MainActivity.this).load(R.mipmap.ninja).into(imageView);
 
         //init database
 
@@ -65,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //get string from edit text
 
-                String sText=editText.getText().toString().trim();
+                String sText=textView.getText().toString().trim();
                 if(!sText.equals("")){
                     //when text is null
                     //init main data
@@ -77,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // clear
 
-                    editText.setText("");
+                    textView.setText("");
                     //notify when data is inserted
 
                     dataList.clear();
